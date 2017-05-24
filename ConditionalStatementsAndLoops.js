@@ -33,23 +33,23 @@ second([2, -3, 2, 12, -3, 3]);
 // Odd numbers to N
 
 function third(args) {
-    for (let i = 1; i <= Number(args[0]); i++) {
+    for (let i = 1; i <= Number(args); i++) {
         if (i % 2 !== 0) {
             console.log(i);
         }
     }
 }
 
-third([7]);
+third(7);
 
 // Triangle of $
 
 function fourth(args) {
-    for (let row = 1; row <= Number(args[0]); row++) {
+    for (let row = 1; row <= Number(args); row++) {
         console.log('$'.repeat(row))
     }
 }
-fourth([4]);
+fourth(4);
 
 function fifth(args) {
 
@@ -113,11 +113,11 @@ fifth(["schindler_s_lists", "MoNdAy"]);
 
 //quadratic equasion 90/100
 
-function sixth(args) {
+function sixth() {
 
-    let a = Number(args[0]);
-    let b = Number(args[1]);
-    let c = Number(args[2]);
+    let a = Number(arguments[0]);
+    let b = Number(arguments[1]);
+    let c = Number(arguments[2]);
 
     if (b * b - 4 * a * c < 0) {
         console.log("No")
@@ -129,13 +129,13 @@ function sixth(args) {
     }
 }
 
-sixth([6, 11, -35]);
+sixth(6, 11, -35);
 
 //multiplication table
 
 function seventh(args) {
 
-    let border = Number(args[0]);
+    let border = Number(args);
     console.log("<table border=\"1\">");
     let firstLine = "";
     firstLine += "<tr>";
@@ -156,11 +156,11 @@ function seventh(args) {
     console.log("</table>");
 }
 
-seventh(['10']);
+seventh('10');
 
 // draw 4 boxes
 function eight(args) {
-    let size = Number(args[0]);
+    let size = Number(args);
 
     if (size == 2) {
         console.log("+++")
@@ -181,7 +181,7 @@ function eight(args) {
     }
 }
 
-eight([18]);
+eight(18);
 
 // Callendar
 
@@ -241,3 +241,25 @@ function ninth(args) {
 }
 
 ninth([12, 4, 2016])
+
+
+function solve() {
+    [a, b, c] = [arguments[0], arguments[1], arguments[2]].map(Number);
+   
+    let d = ((Math.pow(b, 2)) - (4 * a * c));
+    let x1 = (-b + Math.sqrt(d)) / (2 * a);
+    let x2 = (-b - Math.sqrt(d)) / (2 * a);
+ 
+    if (d > 0 && x1 < x2) {
+        console.log(x1 + "\n" + x2);
+    }
+    else if (d > 0 && x2 < x1) {
+        console.log(x2 + "\n" + x1);
+    }
+    else if (d == 0) {
+        console.log(x1);
+    }
+    else if (d < 0) {
+        console.log("no");
+    }
+}

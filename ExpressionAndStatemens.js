@@ -4,19 +4,19 @@
 
 // Hello JS
 
-function first(args) {
-    console.log("Hello, " + args[0] + ", I am JavaScript!")
+function first() {
+    console.log("Hello, " + arguments[0] + ", I am JavaScript!")
 }
 
 // area and perimeter of rect
 
-function second(args) {
-    let [a, b]= [Number(args[0]), Number(args[1])];
+function second() {
+    let [a, b]= [Number(arguments[0]), Number(arguments[1])];
 
     console.log(a * b);
     console.log((a + b) * 2)
 }
-second([2, 2]);
+second(2, 2);
 
 // distance
 function third(args) {
@@ -25,7 +25,7 @@ function third(args) {
     console.log(Math.abs((v1 * t) - (v2 * t)));
 }
 
-third([0, 60, 3600]);
+third(0, 60, 3600);
 
 //distance in 3D 2 dots
 
@@ -40,7 +40,7 @@ fourth([1, 1, 0, 5, 4, 0]);
 
 //Grads to Radians
 function fifth(args) {
-    let result = (((Number(args[0]) % 400)) * 0.9) % 360;
+    let result = (((Number(args) % 400)) * 0.9) % 360;
     let second = 360 + result;
     console.log(result < 0 ? second : result);
 }
@@ -72,7 +72,7 @@ seventh([2.00, 4])
 // Imperial units
 
 function eight(args) {
-    let input = Number(args[0]);
+    let input = Number(args);
     let foots = Math.floor(input / 12);
     let inches = input % 12;
 
@@ -101,7 +101,7 @@ tenth(['smiley.gif', 'Smiley Face']);
 
 function eleventh(args) {
 
-    console.log(parseInt(Number(args[0]),2))
+    console.log(parseInt(Number(args),2))
 }
 eleventh(['00001001']);
 

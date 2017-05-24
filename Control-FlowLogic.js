@@ -4,8 +4,8 @@
 
 // Multiply Numbers
 
-function first(args) {
-    console.log(Number(args[0]) * Number(args[1]));
+function first() {
+    console.log(Number(arguments[0]) * Number(arguments[1]));
 
     // why next lines dosent work ?????
 
@@ -13,20 +13,20 @@ function first(args) {
     //     return (Number(a)*Number(b));
     // }))
 }
-first([3, 2]);
+first(3, 2);
 
 // Boxes and Bottles
 
-function second(args) {
-    console.log(Math.ceil(Number(args[0]) / Number(args[1])));
+function second() {
+    console.log(Math.ceil(Number(arguments[0]) / Number(arguments[1])));
 }
 
-second([20, 5]);
+second(20, 5);
 
 // Leap Year
 
 function third(args) {
-    let year = Number(args[0]);
+    let year = Number(args);
     if (year % 400 == 0) {
         console.log("yes")
     } else if (year % 4 == 0 && (year % 100 != 0)) {
@@ -36,89 +36,89 @@ function third(args) {
     }
 }
 
-third([2000]);
+third(2000);
 
 // Circle Area
 
-function fourth(args) {
+function fourth() {
 
-    let result = Number(args[0]) * Number(args[0]) * Math.PI;
+    let result = Number(arguments[0]) * Number(arguments[0]) * Math.PI;
     console.log(result + "\n" + result.toFixed(2));
 }
 
-fourth([5]);
+fourth(5);
 
 // Triangle area 3 sides
 
-function fifth(args) {
+function fifth() {
 
-    let [a, b, c]=[Number(args[0]), Number(args[1]), Number(args[2])];
+    let [a, b, c]=[Number(arguments[0]), Number(arguments[1]), Number(arguments[2])];
     let p = (a + b + c) / 2;
     console.log(Math.sqrt(p * (p - a) * (p - b) * (p - c)));
 }
 
-fifth([2, 3.5, 4]);
+fifth(2, 3.5, 4);
 
 // Cone - Volume and Area
 
-function sixth(args) {
-    let radius = Number(args[0]);
-    let height = Number(args[1]);
+function sixth() {
+    let radius = Number(arguments[0]);
+    let height = Number(arguments[1]);
 
     console.log("volume = " + (1 / 3 * radius * radius * Math.PI * height) + "\narea = "
         + (radius * radius * Math.PI + Math.PI * radius * Math.sqrt(radius * radius + height * height)));
 }
 
-sixth([3, 5]);
+sixth(3, 5);
 
 // Even Odd or invalid
 
-function seventh(args) {
-    let number = Number(args[0]);
+function seventh() {
+    let number = Number(arguments[0]);
 
     number % 1 != 0 ? console.log("invalid") : number % 2 == 0 ? console.log("even") : console.log("odd");
 }
 
-seventh([1.5]);
+seventh(1.5);
 
 // Fruit Vegy or unknown
 
-function eight(args) {
+function eight() {
     let fruits = ["banana", "apple", "kiwi", "cherry", "lemon", "grapes", "peach"];
     let vegies = ["tomato", "cucumber", "pepper", "onion", "garlic", "parsley"];
 
-    if (fruits.indexOf(args[0]) > -1) {
+    if (fruits.indexOf(arguments[0]) > -1) {
         console.log("fruit");
-    } else if (vegies.indexOf(args[0]) > -1) {
+    } else if (vegies.indexOf(arguments[0]) > -1) {
         console.log("vegetable");
     } else {
         console.log("unknown");
     }
 
 }
-eight(["banana"]);
+eight("banana");
 
 // Colorful Numbers
 
-function ninth(args) {
+function ninth() {
     console.log("<ul>");
-    for (let i = 1; i <= Number(args[0]); i++) {
+    for (let i = 1; i <= Number(arguments[0]); i++) {
         let color = i % 2 == 0 ? "blue" : "green";
         console.log("<li><span style='color:" + color + "'>" + i + "</span></li>");
     }
     console.log("</ul>");
 }
 
-ninth([10]);
+ninth(10);
 
 // Chessboard
 
-function tenth(args) {
+function tenth() {
 
     let black = "<span class=\"black\"></span>";
     let white = "<span class=\"white\"></span>";
 
-    let dimension = Number(args[0]);
+    let dimension = Number(arguments[0]);
     let counter = -1;
 
     console.log("<div class=\"chessboard\">")
@@ -137,11 +137,12 @@ function tenth(args) {
 
 }
 
-tenth([3]);
+tenth(3);
 
 // Binary Logarithm
 
 function eleventh(args) {
+    
     args.map(function (a) {
         if (a != 0) {
             console.log(Math.log2(a))
@@ -153,9 +154,9 @@ eleventh([1024, 1048576, 256, 1, 2, 50, 100, 0]);
 
 // Prime Number Checker
 
-function twelfth(args) {
+function twelfth() {
 
- let number = Number(args[0]);
+ let number = Number(arguments[0]);
 
     if(number<=1){
         console.log(false)
@@ -178,4 +179,4 @@ function twelfth(args) {
  }
 }
 
-twelfth([12]);
+twelfth(12);
