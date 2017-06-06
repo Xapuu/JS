@@ -4,7 +4,7 @@
 function First(){
 let params = arguments[0]
 
-for(let i = 0; i<params.length-3;i+=3){    
+for(let i = 0; i<params.length;i+=3){    
 
 console.log(checker(params[i],params[i+1],params[i+2]))
 }
@@ -53,7 +53,7 @@ function Third (){
     let params = arguments[0]
     console.log('<?xml version="1.0" encoding="UTF-8"?>')
     console.log("<quiz>")
-    for(let i = 0; i<params.length-2;i+=2){
+    for(let i = 0; i<params.length;i+=2){
         console.log('<question>\n'+params[i]+'\n</question>\n<answer>\n'+params[i+1]+'\n</answer>')
 
     }
@@ -69,20 +69,18 @@ Third(["Dry ice is a frozen form of which gas?",
 // coocking with numbers
 
 function Fourth(){
-    let params=arguments[0]
 
-let prev ="";
+    let params=arguments[0]
+    let prev 
 
   params.filter(x=>{
       return Number(x)==params[0]?false:true
   }).reduce(function(acc,cur){
-      console.log(Math.round(blender(acc,cur)*10)/10!==prev?Math.round(blender(acc,cur)*10)/10:"")
-      prev=Math.round(blender(acc,cur)*10)/10
-        return blender(acc,cur)
+    console.log(blender(acc,cur))
+    return blender(acc,cur)
     },Number(arguments[0][0]))
 
     function blender (num, prog){
-
         switch(prog){
             case 'chop':
             return num/2
@@ -99,11 +97,8 @@ let prev ="";
             case 'fillet':
             return num*0.8
             break;
-            default:
-            return num
-            break;
+        
         }
-
     }
 }
 
