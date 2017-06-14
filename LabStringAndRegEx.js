@@ -163,3 +163,63 @@ console.log(solution.join(", "))
 }
 
 Seventh(['pe@s@hoo@gmail.a.b.c@om.', 'todor_43@mail.dir.bg', 'foo@bar.com'])
+
+
+function Eight(){
+
+    let text = arguments[0]
+    let ban = arguments[1]
+
+    for(let i = 0 ; i<ban.length; i++){
+        let current = ban[i]
+
+        console.log(text.match("/"+"${current}"+"/g"))
+
+        console.log(text.replace('/${current}/g',"-".repeat(current.length)))
+    }
+
+  
+}
+
+Eight('roses are red, violets are blue', [', violets are', 'red'])
+
+// // i have trouble here
+// function Fifteen(name,mail,age,form){
+
+//     console.log("test ==>  "+ "<!username!>".match(/(\<[\!\@\+]\{?\w+\}?[\!\@\+]\>)/g))
+//     let data = [name,mail,age]
+//     let count = 0
+//     for( let i =0 ; i< form.length; i++){
+//         let currentLine = form[i]
+//         let matcher = currentLine.match(/(\<[\!\@\+]\{?\w+\}?[\!\@\+]\>)/g)
+//         if(matcher!=null){
+//             form[i] =form[i].replace(/(\<[\!\@\+]\{?\w+\}?[\!\@\+]\>)>/g,'sds')
+//             console.log(form[i])
+//             count++
+//         }
+//     }
+
+//     console.log(form)
+// }
+
+// Fifteen('Pesho',
+// 'pesho@softuni.bg',
+// '90-60-90',
+// ['Hello, <!username!>!',
+//  'Welcome to your Personal profile.',
+//  'Here you can modify your profile freely.',
+//  'Your current username is: <!fdsfs!>. Would you like to change that? (Y/N)',
+//  'Your current email is: <@DasEmail@>. Would you like to change that? (Y/N)',
+//  'Your current phone number is: <+number+>. Would you like to change that? (Y/N)']
+// )
+
+// function Sixteen(){
+
+//     let input= arguments[0].replace(/([-]?\d+[\.]?\d*\s*\*\s*[-]?\d*[\.]?\d*)/g,function(match){
+//         let currentIn = match.replace(/s+/g,"").split("*")
+//         return currentIn[0]*currentIn[1]
+//     })
+//     console.log(input)
+// }
+
+// Sixteen("My bill: 2*2.50 (beer); 2* 1.20 (kepab); -2  * 0.5 (deposit).")

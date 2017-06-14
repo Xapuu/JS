@@ -50,10 +50,10 @@ Third(["remove","remove","remove"])
 // rotate array
 
 function Fourth(){
-    let step = arguments[0][arguments[0].length-1]
+    let step = arguments[0].pop()
     let arr = arguments[0]
     let sol = []
-    arr.pop();
+    
     arr.map((x,index)=>{       
         sol[(index+step)%arr.length]=x
     })
@@ -219,13 +219,13 @@ function Tenth(){
     let startX = params[2]
     let startY = params[3]
     let matrix = []
-    for(let i=0; i<sideY;i++){              // тук си правя array-те
+    for(let i=0; i<sideY;i++){              // here i create the arrays
          matrix[i]=new Array()   
     }
     matrix[startY][startX]=1
     let numbers =[]
     numbers.push([startX,startY])
-    while(numbers.length>0){                // проверявам за всяка клетка дали има по-големи от нея в 8-те посоки и ако има такава и задавам нова стойност, и я добавям към numbers, за оискедваща проверка
+    while(numbers.length>0){                // check if there is a bigger nabor than the cell itself and if there is i edit its value and i add it to "numbers" for next chek
         let current = numbers.shift()
         let currentX = current[0]
         let currentY = current[1]
@@ -291,3 +291,4 @@ function Tenth(){
 }
 
 Tenth([10, 5, 9, 0])
+

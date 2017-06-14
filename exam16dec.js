@@ -92,13 +92,15 @@ function Problem4() {
         }
     }
 
+    //From here on im printing
     console.log("Planes left:")
 
     Object.keys(planes).filter(x => planes[x].status != "depart").sort(function(a,b){
         return a.localeCompare(b)
     }).map(x => console.log("- " + x))
 
-
+    // in sorted towns there is a problem with the sort, 
+    
     let sortedTowns = Object.keys(towns).sort((a, b) => towns[b].arrivals - towns[a].arrivals).sort(function(a,b){
         if((towns[b].arrivals === towns[a].arrivals)){
         return a.toLowerCase().localeCompare(b.toLocaleLowerCase())
@@ -106,7 +108,6 @@ function Problem4() {
             return -1
         }
     })
-
 
     for (let town of sortedTowns) {
         console.log(town)
