@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Focus</title>
+    <style>
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body onload="validate()">
+    <label for="email">Enter email:</label>
+    <input id="email" type="text" />
+    <script>
+        function validate() {
+            document.getElementById("email").addEventListener("keypress",errChecker)
+            function errChecker() {
+                let mail = document.getElementById("email").value
+                let test = mail.match(/^[a-z]+[@][a-z]+[.][a-z]+$/)
+                if (test == null) {
+                    document.getElementById("email").setAttribute("class", "error")
+                } else {
+                    document.getElementById("email").removeAttribute("class")
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

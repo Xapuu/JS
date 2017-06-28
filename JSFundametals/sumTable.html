@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <table>
+  <tbody>
+    <tr><th>Product</th><th>Cost</th></tr>
+    <tr><td>Beer</td>   <td>2.88</td></tr>
+    <tr><td>Fries</td>  <td>2.15</td></tr>
+    <tr><td>Burger</td> <td>4.59</td></tr>
+    <tr><td>Total:</td> <td id="sum"></td></tr>
+  </tbody>
+</table>
+<button onclick="sum()">Sum</button>
+<script>
+    function sum(){
+        let params = document.querySelectorAll("tbody td")
+        let solution=0
+        for(let i=1; i <params.length;i+=2){
+            solution += Number(params[i].innerHTML)
+        }
+        document.getElementById("sum").innerHTML=solution
+    }
+</script>
+    </body>
+</html>
